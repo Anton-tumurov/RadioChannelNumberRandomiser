@@ -26,4 +26,6 @@ basic.forever(function () {
         radio.sendNumber(channel + 4)
     }
     serial.writeNumber(channel)
+    serial.writeNumber(guesschannel)
+    serial.writeNumber(guesschannel2)
 })
