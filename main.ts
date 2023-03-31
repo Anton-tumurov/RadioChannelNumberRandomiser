@@ -14,9 +14,9 @@ let compilingnumber = 0
 basic.showString("Ready")
 compilingnumber = randint(0, 10)
 basic.forever(function () {
+    let guesschannel2 = 0
     if (!(input.isGesture(Gesture.ScreenDown))) {
         if (input.buttonIsPressed(Button.A) || (input.buttonIsPressed(Button.B) || (input.buttonIsPressed(Button.AB) || input.isGesture(Gesture.Shake)))) {
-            let guesschannel2 = 0
             guesschannel = randint(1, 15)
             if (guesschannel == Othergroupchannel) {
                 channel = randint(1, 15)
@@ -96,13 +96,13 @@ basic.forever(function () {
                 . . . . .
                 `)
             basic.pause(500)
-            serial.writeNumber(channel)
-            serial.writeNumber(guesschannel)
-            serial.writeNumber(guesschannel2)
-            basic.showNumber(channel)
-            while (true) {
-                basic.pause(100)
-            }
         }
     }
+    basic.showNumber(channel)
+    // tester unusable
+    serial.writeNumber(channel)
+    // tester unusable
+    serial.writeNumber(guesschannel)
+    // tester unusable
+    serial.writeNumber(guesschannel2)
 })
