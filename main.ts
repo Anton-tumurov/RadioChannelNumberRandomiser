@@ -7,13 +7,43 @@ radio.onReceivedNumber(function (receivedNumber) {
 input.onGesture(Gesture.ScreenDown, function () {
 	
 })
-let channel = 0
 let guesschannel = 0
+let channel = 0
 let Othergroupchannel = 0
 let compilingnumber = 0
-basic.showString("Ready")
 compilingnumber = randint(0, 10)
+for (let index = 0; index < compilingnumber; index++) {
+    basic.showIcon(IconNames.Square)
+    basic.pause(10)
+    basic.showIcon(IconNames.SmallSquare)
+}
 basic.forever(function () {
+    let guesschannel2 = 0
+    // tester unusable
+    serial.writeNumber(channel)
+    // tester unusable
+    serial.writeNumber(guesschannel)
+    // tester unusable
+    serial.writeNumber(guesschannel2)
+})
+basic.forever(function () {
+    while (input.isGesture(Gesture.ScreenDown)) {
+        basic.showLeds(`
+            # # . # #
+            # # . # #
+            . . . . .
+            . # # # .
+            # . . . #
+            `)
+        basic.pause(2000)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+    }
     if (!(input.isGesture(Gesture.ScreenDown))) {
         if (input.buttonIsPressed(Button.A) || (input.buttonIsPressed(Button.B) || (input.buttonIsPressed(Button.AB) || input.isGesture(Gesture.Shake)))) {
             guesschannel = randint(1, 15)
@@ -98,13 +128,4 @@ basic.forever(function () {
             basic.showNumber(channel)
         }
     }
-})
-basic.forever(function () {
-    let guesschannel2 = 0
-    // tester unusable
-    serial.writeNumber(channel)
-    // tester unusable
-    serial.writeNumber(guesschannel)
-    // tester unusable
-    serial.writeNumber(guesschannel2)
 })
