@@ -8,15 +8,15 @@ This repository can be added as an **extension** in MakeCode.
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
-* search for **https://github.com/anton-tumurov/radiochannelnumberrandomiser** and import
-
+* search for **##########################** and import
+  "But then people would be able to see my code so, NO!", - Anton -thecoder- - 
 ## Edit this project ![Build status badge](https://github.com/anton-tumurov/radiochannelnumberrandomiser/workflows/MakeCode/badge.svg)
 
 To edit this repository in MakeCode.
-
+  "But then people would be able to see my code so, NO!", - Anton -thecoder- - 
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * click on **Import** then click on **Import URL**
-* paste **https://github.com/anton-tumurov/radiochannelnumberrandomiser** and click import
+* paste **######################** and click import
 
 ## Blocks preview
 
