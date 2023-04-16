@@ -40,14 +40,7 @@ basic.forever(function () {
             # . . . #
             `)
         basic.pause(2000)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            `)
-    }
+        basic.clearScreen()
     basic.showLeds(`
         # # . # #
         # # . # #
@@ -55,6 +48,8 @@ basic.forever(function () {
         # . . . #
         . # # # .
         `)
+        pause(2000)
+        basic.clearScreen()
     if (!(input.isGesture(Gesture.ScreenDown))) {
         if (input.buttonIsPressed(Button.A) || (input.buttonIsPressed(Button.B) || (input.buttonIsPressed(Button.AB) || input.isGesture(Gesture.Shake)))) {
             guesschannel = randint(1, 15)
@@ -142,4 +137,5 @@ basic.forever(function () {
             }
         }
     }
+}
 })
