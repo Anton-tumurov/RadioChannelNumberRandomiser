@@ -7,6 +7,9 @@ radio.onReceivedNumber(function (receivedNumber) {
 input.onGesture(Gesture.ScreenDown, function () {
 	
 })
+input.onGesture(Gesture.ScreenDown, function () {
+	
+})
 let guesschannel = 0
 let channel = 0
 let Othergroupchannel = 0
@@ -17,6 +20,7 @@ for (let index = 0; index < compilingnumber; index++) {
     basic.pause(10)
     basic.showIcon(IconNames.SmallSquare)
 }
+basic.clearScreen()
 basic.forever(function () {
     let guesschannel2 = 0
     // tester unusable
@@ -44,6 +48,13 @@ basic.forever(function () {
             . . . . .
             `)
     }
+    basic.showLeds(`
+        # # . # #
+        # # . # #
+        . . . . .
+        # . . . #
+        . # # # .
+        `)
     if (!(input.isGesture(Gesture.ScreenDown))) {
         if (input.buttonIsPressed(Button.A) || (input.buttonIsPressed(Button.B) || (input.buttonIsPressed(Button.AB) || input.isGesture(Gesture.Shake)))) {
             guesschannel = randint(1, 15)
@@ -125,7 +136,10 @@ basic.forever(function () {
                 . . . . .
                 `)
             basic.pause(500)
-            basic.showNumber(channel)
+            while (true && !(input.buttonIsPressed(Button.A)) || (input.buttonIsPressed(Button.B) || (input.buttonIsPressed(Button.AB) || input.isGesture(Gesture.Shake)))) {
+                basic.showNumber(channel)
+                basic.clearScreen()
+            }
         }
     }
 })
